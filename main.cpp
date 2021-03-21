@@ -5,7 +5,7 @@
 #include <algorithm>
 using namespace std;
 
-int str2int(string& input_string)
+int str2int(string& input_string)  // from  string to int
 {
     int result = 0;
     int ten_dd = 1;
@@ -29,7 +29,7 @@ int str2int(string& input_string)
     }
     return result * sign_flag;
 }
-vector<string> split_string(string& input_string)
+vector<string> split_string(string& input_string) //split the string to easy to calculate
 {
     vector<string> splited_string;
     int length = input_string.size();
@@ -55,7 +55,7 @@ vector<string> split_string(string& input_string)
     splited_string.push_back(input_string.substr(last_flag, length - last_flag));
     return splited_string;
 }
-int calculator_junior(vector<string>input_string_vector)
+int calculator_junior(vector<string>input_string_vector)  //do the simple calculation without brackets
 {
     stack<int> result_stack;
     int length = input_string_vector.size();
@@ -99,7 +99,7 @@ int calculator_junior(vector<string>input_string_vector)
 
     
 }
-string int2str(int input_int)
+string int2str(int input_int)   //from int to string
 {
     string result_string;
     int sign_flag = 1;
@@ -119,7 +119,7 @@ string int2str(int input_int)
     reverse(result_string.begin(), result_string.end());
     return result_string;
 }
-int calculator_senior(string input_string,int start,int end)
+int calculator_senior(string input_string,int start,int end) //do calculation with brackets
 {
     int temp_start, temp_end;
     string result_string;
@@ -154,7 +154,7 @@ int calculator_senior(string input_string,int start,int end)
 }
 int main()
 {
-    string input_string = "(3*(4+5)+9*9+(3-4)*256+2)/2-188";
+    string input_string = "(3*(4+5)+9*9+(3-4)*256+2)/2-188"; //legal input math string 
    // cout << calculator_junior(split_string(input_string));
   cout<<calculator_senior(input_string,0,input_string.size());
     return 0;
